@@ -347,7 +347,7 @@
         }
 
         async function getFromKV(key) {
-            const response = await fetch(`${workerUrl}/kv/${encodeURIComponent(key)}`);
+            const response = await fetch(`${workerUrl}kv/${encodeURIComponent(key)}`);
             if (response.ok) {
                 return await response.json();
             }
@@ -355,7 +355,7 @@
         }
 
         async function putToKV(key, value) {
-            const response = await fetch(`${workerUrl}/kv/${encodeURIComponent(key)}`, {
+            const response = await fetch(`${workerUrl}kv/${encodeURIComponent(key)}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(value)
